@@ -1,0 +1,24 @@
+vector<ll> factors(ll x)
+{
+    vector<ll> res;
+    for (auto it : primes)
+    {
+        if (it * it > x)
+        {
+            if (x > 1)
+            {
+                res.pb(x);
+                x = 1;
+            }
+        }
+        else
+        {
+            while (x % p == 0)
+            {
+                res.pb(p);
+                x /= p;
+            }
+        }
+    }
+    return res;
+}
